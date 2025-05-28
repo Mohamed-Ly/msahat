@@ -10,7 +10,6 @@
 
     <!-- Favicons -->
     <link href="{{ asset('index/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('index/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
@@ -44,8 +43,8 @@
         <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center;">
 
             <div id="logo" class="pull-left">
-                <h1><a href="#intro" class="scrollto"><img
-                            src="{{ asset('attachments/img/' . $sitting->company_logo) }}" alt=""><span
+                <h1><a href="#intro" class="scrollto">
+                        <img src="{{ asset('attachments/img/' . $sitting->company_logo) }}" alt=""><span
                             class="msahat-txt-logo">{{ $sitting->company_name }}</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a> -->
@@ -204,6 +203,30 @@
         </section><!-- #featured-services -->
 
 
+        <!--==========================
+      START NEW EDITS (NEW SECTION)
+    ============================-->
+
+
+
+
+        <!--==========================
+      END NEW EDITS (NEW SECTION)
+    ============================-->
+        <section class="animated-text-section">
+            <div class="container">
+                <!-- السطر الثابت -->
+                <header class="section-header">
+                    <h3 class="static-text">ماذا تريد ؟</h3>
+                </header>
+
+                <!-- الكلمات المتحركة مع Typing Effect -->
+                <div class="typing-words">
+                    <span class="typed-word"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </section>
         <!--==========================
       About Us Section
     ============================-->
@@ -888,8 +911,8 @@
 
                         <div class="info-wrap">
 
-                            <div class="info-item d-flex" style="justify-content: end; align-items: center;" data-aos="fade-up"
-                                data-aos-delay="200">
+                            <div class="info-item d-flex" style="justify-content: end; align-items: center;"
+                                data-aos="fade-up" data-aos-delay="200">
                                 <div style="text-align: right;">
                                     <h3>العنوان</h3>
                                     @foreach ($Sitting_contact as $item)
@@ -899,8 +922,8 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div><!-- End Info Item -->
 
-                            <div class="info-item d-flex" style="justify-content: end; align-items: center;" data-aos="fade-up"
-                                data-aos-delay="300">
+                            <div class="info-item d-flex" style="justify-content: end; align-items: center;"
+                                data-aos="fade-up" data-aos-delay="300">
                                 <div style="text-align: right;">
                                     <h3>رقــم الهاتف</h3>
                                     @foreach ($Sitting_contact as $item)
@@ -911,8 +934,8 @@
                             </div><!-- End Info Item -->
 
 
-                            <div class="info-item d-flex" style="justify-content: end; align-items: center;" data-aos="fade-up"
-                                data-aos-delay="400">
+                            <div class="info-item d-flex" style="justify-content: end; align-items: center;"
+                                data-aos="fade-up" data-aos-delay="400">
 
                                 <div style="text-align: right;">
                                     <h3>البريد الألكتروني</h3>
@@ -1043,11 +1066,16 @@
                         <h4>تواصل معــــنا</h4>
 
                         <div class="social-links">
-                            <a target="_blank" href="{{ $sitting->facebook_url }}" class="twitter"><i class="fa-brands fa-square-facebook"></i></a>
-                            <a target="_blank" href="{{ $sitting->instagram_url }}" class="facebook"><i class="fa-brands fa-square-instagram"></i></a>
-                            <a target="_blank" href="{{ $sitting->linkedin_url }}" class="instagram"><i class="fa-brands fa-linkedin"></i></a>
-                            <a target="_blank" href="{{ $sitting->tiktok_url }}" class="google-plus"><i class="fa-brands fa-tiktok"></i></a>
-                            <a target="_blank" href="{{ $sitting->youtube_url }}" class="linkedin"><i class="fa-brands fa-youtube"></i></a>
+                            <a target="_blank" href="{{ $sitting->facebook_url }}" class="twitter"><i
+                                    class="fa-brands fa-square-facebook"></i></a>
+                            <a target="_blank" href="{{ $sitting->instagram_url }}" class="facebook"><i
+                                    class="fa-brands fa-square-instagram"></i></a>
+                            <a target="_blank" href="{{ $sitting->linkedin_url }}" class="instagram"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a target="_blank" href="{{ $sitting->tiktok_url }}" class="google-plus"><i
+                                    class="fa-brands fa-tiktok"></i></a>
+                            <a target="_blank" href="{{ $sitting->youtube_url }}" class="linkedin"><i
+                                    class="fa-brands fa-youtube"></i></a>
                         </div>
 
                     </div>

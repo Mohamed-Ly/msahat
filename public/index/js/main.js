@@ -10,6 +10,48 @@
     }
   });
 
+/* START NEW EDITS (NEW SECTION) */
+document.addEventListener('DOMContentLoaded', function() {
+  const words = ["هل فكرت في إنشاء مشروعك الخاص ؟", "هل تريد أن تحول فكرتك الى مشروع قائم ؟", "هل تريد أن تطور مشروعك تقنيا ؟", "نحن هنا لنساعدك"]; // الكلمات المتغيرة
+  const typedWordElement = document.querySelector('.typed-word');
+  const cursorElement = document.querySelector('.cursor');
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 100; // السرعة (كل 100ms لكل حرف)
+
+  function typeWriter() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+      // حالة المسح
+      typedWordElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      typingSpeed = 30; // تسريع المسح
+    } else {
+      // حالة الكتابة
+      typedWordElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      typingSpeed = 100;
+    }
+
+    // تغيير الكلمة عند اكتمالها
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      typingSpeed = 1500; // انتظار قبل المسح
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length; // الانتقال للكلمة التالية
+      typingSpeed = 500; // انتظار قبل الكتابة
+    }
+
+    setTimeout(typeWriter, typingSpeed);
+  }
+
+  typeWriter(); // بدء التأثير
+});
+/* END NEW EDITS (NEW SECTION) */
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
